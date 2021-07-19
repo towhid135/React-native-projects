@@ -14,12 +14,12 @@ const AlertWithmodal = props => {
       >
       <View style={styles.centeredView}>
           <View style={styles.modalView}>
-            <Text style={styles.modalText}>Press Ok to Delete</Text>
+            <Text style={styles.modalText}> Would You Like to Delete? </Text>
             <Pressable
               style={[styles.button, styles.buttonClose]}
               onPress={props.delFun.bind(this,props.GoalId)}
             >
-              <Text style={styles.textStyle}>Ok</Text>
+              <Text style={styles.textStyle}>Yes</Text>
             </Pressable>
           </View>
         </View>
@@ -63,12 +63,13 @@ const styles = StyleSheet.create({
   },
    modalText: {
     marginBottom: 15,
-    textAlign: "center"
+    textAlign: "center",
+    fontWeight: "bold",
   },
   textStyle: {
     color: "white",
     fontWeight: "bold",
-    textAlign: "center"
+    textAlign: "center",
   },
   
 });
