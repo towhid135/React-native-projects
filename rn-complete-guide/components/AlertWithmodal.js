@@ -3,24 +3,21 @@ import { StyleSheet, Text,Alert, Modal,Pressable, View, TextInput, Button, Scrol
 
 
 const AlertWithmodal = props => {
-	//const [modalVisible, setModalVisible] = useState(true);
+//const [modalVisible, setModalVisible] = useState(false);
 
 	return ( 
 		<Modal
         animationType="slide"
         transparent={true}
-        visible={props.popupModalState}
-        onRequestClose={() => {
-          Alert.alert("Modal has been closed.");
-          setModalVisible(!props.popupModalState);
-        }}
+        visible={props.popupModalFlag}
+        onRequestClose={props.forBackButton.bind(this,0)}
       >
       <View style={styles.centeredView}>
           <View style={styles.modalView}>
             <Text style={styles.modalText}>Press Ok to Delete</Text>
             <Pressable
               style={[styles.button, styles.buttonClose]}
-              onPress={() => {setModalVisible(!props.modalStateValue);props.deleteItem;}}
+              onPress={props.delFun.bind(this,props.GoalId)}
             >
               <Text style={styles.textStyle}>Ok</Text>
             </Pressable>

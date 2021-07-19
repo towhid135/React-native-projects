@@ -4,6 +4,8 @@ import { StyleSheet,View,Button,Alert, FlatList,Pressable,Text } from 'react-nat
 
 import GoalItem from './components/GoalItem';
 import GoalInput from './components/GoalInput';
+import AlertWithmodal from './components/AlertWithmodal'
+var goalId1;
 
 export default function App() {
   
@@ -25,7 +27,7 @@ export default function App() {
 
     };
 
-    const removeGoalHandler =() => {
+    const removeGoalHandler = goalId => {
       /*Alert.alert(   'Delete Item',  'Press Ok to Delete!',  
             [  
                 {  text: 'Cancel',  
@@ -36,6 +38,8 @@ export default function App() {
                  onPress: () =>  setCourseGoals( currentGoals => {return currentGoals.filter((goal) => goal.id !== goalId)} ) 
             },  
             ]   );*/
+        goalId1 = goalId;
+        console.log(goalId);
         setModalVisible(!modalVisible);
 
      
@@ -43,9 +47,9 @@ export default function App() {
     
     const deleteItem = goalId =>{
       setCourseGoals( currentGoals => {return currentGoals.filter((goal) => goal.id !== goalId)} );
-      console.log(goalId);
       setModalVisible(false);
-    }
+    };
+    console.log(goalId1);
 
 
     const changeModalFlag = () => setIsAddMode(true);
@@ -73,6 +77,8 @@ export default function App() {
         data={courseGoals}
         renderItem = { itemData => <GoalItem popupModalState = {modalVisible} delFun = {deleteItem} id ={itemData.item.id} onDelete ={removeGoalHandler} title = {itemData.item.value} /> }
       />
+
+      <AlertWithmodal forBackButton = {removeGoalHandler} popupModalFlag = {modalVisible} GoalId = {goalId1} delFun = {deleteItem} />
        
       
 
