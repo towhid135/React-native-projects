@@ -1,0 +1,6 @@
+1)onChangeText - is a property that takes a function to be called every time the text changed, and it returns changed string each time. the onChangeText prop passes the changed text every time to the function that it takes as an input.
+
+2)<Text key={goal} > {goal}</Text> here key is a map goal is the mapping key, if the text inside goal is same than it will give error.
+
+3) const [enteredGoal, setEnteredGoal] = useState(''), here useState is a hook. It return an array of two elements. The first element contains the current state and the second elements  is a function that is used to update the current state. The value inside the useState("") is the current state, here the current value is empty string. Using current state value as an arrow function of javascript is better to faster the up because it does not call the current state giving function every time, instead it calls only one time.
+4) In arrow function, there is no need to use paranthesis around the argument for single argument.
