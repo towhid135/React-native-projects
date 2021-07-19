@@ -12,6 +12,7 @@ export default function App() {
   const [courseGoals, setCourseGoals] = useState([]);
   const [isAddMode,setIsAddMode] = useState(false);
   const [modalVisible, setModalVisible] = useState(false);
+  console.log(courseGoals);
 
   //this a way to define function in js
   /*function goalInputHandler(enteredText) {
@@ -46,8 +47,8 @@ export default function App() {
     };
     
     const deleteItem = goalId =>{
-      setCourseGoals( currentGoals => {return currentGoals.filter((goal) => goal.id !== goalId)} );
       setModalVisible(false);
+      setCourseGoals( currentGoals => {return currentGoals.filter((goal) => goal.id !== goalId)} );
     };
     console.log(goalId1);
 

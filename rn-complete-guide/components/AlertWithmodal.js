@@ -15,12 +15,29 @@ const AlertWithmodal = props => {
       <View style={styles.centeredView}>
           <View style={styles.modalView}>
             <Text style={styles.modalText}> Would You Like to Delete? </Text>
+
+            <View style = {styles.buttonContainer} >
+
+            <View style = {styles.equalButtonSize}>
             <Pressable
-              style={[styles.button, styles.buttonClose]}
+              style={[styles.button, styles.buttonClose1]}
               onPress={props.delFun.bind(this,props.GoalId)}
             >
               <Text style={styles.textStyle}>Yes</Text>
             </Pressable>
+            </View>
+
+            <View style = {styles.equalButtonSize}>
+            <Pressable
+              style={[styles.button, styles.buttonClose2]}
+              onPress={props.forBackButton.bind(this,0)}
+            >
+              <Text style={styles.textStyle}>No</Text>
+            </Pressable>
+
+            </View>
+
+            </View>
           </View>
         </View>
 
@@ -40,7 +57,7 @@ const styles = StyleSheet.create({
   },
   modalView: {
     margin: 20,
-    backgroundColor: "#88b04b",
+    backgroundColor: "#f1c40f",
     borderRadius: 20,
     padding: 35,
     alignItems: "center",
@@ -56,10 +73,13 @@ const styles = StyleSheet.create({
   button: {
     borderRadius: 20,
     padding: 10,
-    elevation: 2
+    elevation: 2,
   },
-   buttonClose: {
+   buttonClose1: {
     backgroundColor: "#c7381f",
+  },
+  buttonClose2: {
+    backgroundColor: "#27ae60",
   },
    modalText: {
     marginBottom: 15,
@@ -71,6 +91,16 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     textAlign: "center",
   },
+  buttonContainer: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    width: "60%",
+    left: "10%"
+  },
+
+  equalButtonSize:{
+    width: "45%"
+  }
   
 });
 
