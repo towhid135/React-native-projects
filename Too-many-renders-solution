@@ -1,1 +1,3 @@
+In order to solve the too many renders problem in react-native we need use inline function for updating the state.
 
+example: <Button title='Okay' onPress = { () => setNumber(2) } />
